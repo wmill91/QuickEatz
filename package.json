@@ -1,5 +1,5 @@
 {
-  "name": "Restaurant_app@1.0.0",
+  "name": "Restaurant_app",
   "version": "1.0.0",
   "description": "this is a starter project for the loyola class",
   "main": "server.js",
