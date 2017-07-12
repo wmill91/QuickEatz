@@ -13,7 +13,7 @@ app.listen(process.env.PORT || 5000, function(err) {
    return console.log('something bad happened', err)
  }
 
- console.log(`Magic is happening on ${port}`)
+ console.log(`Magic is happening on ${process.env.PORT}`)
 });
 
 mongoose.connect('mongodb://heroku_xqz0gvn1:751m26uu1hjnf4otua908tr8fa@ds153732.mlab.com:53732/heroku_xqz0gvn1', function(error){
