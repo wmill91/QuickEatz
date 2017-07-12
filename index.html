@@ -9,74 +9,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-       <link rel="stylesheet" type="text/css" href="style.css">
-       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
-  <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
-  </script>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 </head>
 
+
 <body>
 
-
-  <h1>QuickEats</h1>
-
-    <h2>Which of these categories is most important?</h2>
-
-      <div id="carryout"><h3>Carryout</h3>
-        <div>
-          
-          <p>Yes</p><p>No</p>
-  </div>
-
-      <div id="price"><p>Price</p></div>
-      <div id="hunger"><p>Hunger</p></div>
-      <div id="fancy"><p>Fancy Pants</p></div>
-      <div id="alcohol"><p>Alcohol</p></div>
-
-
-
-
-
-    <div id="all-restaurants">
-
-
+      <div class="container">
+          <h2>Hunger</h2>
+              <p>How hungry are you?</p>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      
+        <select name="hunger">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
     </div>
-    <script>
+</div>
+
+   <!--    <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      
+        <select name="hunger">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+    </div>
+</div>
+
+  <div class="container">
+          <h2>Alcohol</h2>
+              <p>Is happy hour what you seek?</p>
+         <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Click Here
+      
+            <span class="dropdown-option"></span></button>
+                <ul class="dropdown-menu">
+                <li> 1 </li>
+          </ul>
+    </div>
+</div> -->
+
+    <!--   <div class="container">
+          <h2>Carryout</h2>
+            <p></p>
+            <div class="dropdown">
+              <button class="btn btn-default" type="button" data-toggle="dropdown">Click Here
     
-    $.get('http://localhost:3000/get-all-restaurants', function(data){ 
-        
-    // $('#all-restaurants').append(JSON.stringify(data));
-    var element = ""; // make a new variable
-    for( var i=0; i < data.length; i++){
-        element += "<h1>"+data[i].name+"</h1>"; //loop tells dom what to do with new variable
-    }
-    $("#all-restaurants").append(element); // add the html items to the thing already doing
-        console.log(element); // shows up in terminal
-    // // $.get('http:localhost:3000/get-rest-loop',
-    // //     
-    // //     var el ="<h1>" + AllRestaurants[].name;
-    // );
-});
-    </script>
+         <span class="dropdown-option"></span></button>
+                <ul class="dropdown-menu">
+                 <li> 1 </li>
+          </ul>
+      </div>
+</div>  <div class="container">
+          <h2>Fancy</h2>
+              <p>How fancy are you feeling?</p>
+      
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Click Here
+      
+            <span class="dropdown-option"></span></button>
+                <ul class="dropdown-menu">
+                <li> 1 </li>
+          </ul>
+    </div>
+</div> -->
 
 
+<script>
 
+ console.log("ouch");
 
+ $('#submit').click(function(){
+
+  var submit = {
+  "restaurants" : $("#restaurants").val(),
+   };
+   console.log('ouch again!');
+
+   $.post('http://localhost:3000/restaurants', submit, function(err, res){
+     submit
+  });
+
+ });
+</script>
 </body>
-
-
 </html>
