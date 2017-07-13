@@ -1,0 +1,102 @@
+<DOCTYPE! html>
+<html>
+<head>
+
+    <title>Json Front End Test</title>
+
+
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<!--  -->
+<body>
+
+<!--       <div class="container">
+          <h2>Hunger</h2>
+              <p>How hungry are you?</p>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      
+        <select name="hunger">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+    </div>
+</div>
+
+      <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      
+        <select name="hunger">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+    </div>
+</div>
+
+  <div class="container">
+          <h2>Alcohol</h2>
+              <p>Is happy hour what you seek?</p>
+         <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Click Here
+      
+            <span class="dropdown-option"></span></button>
+                <ul class="dropdown-menu">
+                <li> 1 </li>
+          </ul>
+    </div>
+</div>
+ -->
+  
+
+
+<input id="restaurants" type="text" name="restaurants"></input>
+
+
+<button id="submit" type="button" class="btn btn-blue">SUBMIT</button>
+
+<script>
+
+var url= 'https://lit-brook-62298.herokuapp.com/';
+
+ console.log("ouch");
+
+ $('#submit').click(function(){
+
+  var submit = {
+  "restaurants" : $("#restaurants").val(),
+   };
+   console.log('ouch again!');
+
+   $.post(url +'/restaurants', submit, function(err, res){
+     submit
+  });
+
+ });
+</script>
+</body>
+</html>

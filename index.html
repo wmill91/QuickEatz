@@ -24,10 +24,10 @@
 
 </head>
 
-
+<!--  -->
 <body>
 
-      <div class="container">
+<!--       <div class="container">
           <h2>Hunger</h2>
               <p>How hungry are you?</p>
         <div class="dropdown">
@@ -70,11 +70,18 @@
           </ul>
     </div>
 </div>
-
+ -->
   
 
 
+<input id="restaurants" type="text" name="restaurants"></input>
+
+
+<button id="submit" type="button" class="btn btn-blue">SUBMIT</button>
+
 <script>
+
+var url= 'htpp://localhost:3000/restaurants';
 
  console.log("ouch");
 
@@ -85,11 +92,21 @@
    };
    console.log('ouch again!');
 
-   $.post('http://localhost:3000/restaurants', submit, function(err, res){
+   $.post(url +'/restaurants', submit, function(err, res){
      submit
   });
 
  });
+
+
+
+
+
 </script>
+
+
+
+
+
 </body>
 </html>

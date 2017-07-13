@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+   
 
-
-app.listen(process.env.PORT || 5000, function(err) {  
+app.listen(process.env.PORT || 3000, function(err) {  
  if (err) {
    return console.log('something bad happened', err)
  }
@@ -34,18 +34,21 @@ var RSchema = new mongoose.Schema ({
 },{ collection: "restaurants"}
 );
 
-mongoose.model('restaurants', RSchema)
-var Restaurants = mongoose.model('restaurants', RSchema)
+// var Restaurants = mongoose.model('restaurants', RSchema)
 
  
-app.post('/restaurants', function (req, res){
-    console.log("/restaurants endpoint getting hit");
-    var restaurants = new Restaurants(req.body);
+// app.post('/restaurants', function (req, res){
+//     console.log("/restaurants endpoint getting hit");
+//     var restaurants = new Restaurants(req.body);
         
+        //I don't understand how all of this functions together.
+        //It does not 'click' for me
+//         console.log(restaurants);
+//         restaurants.save(function (err){
+//             res.send(restaurants);
+//         });
 
-        console.log(restaurants);
-        restaurants.save(function (err){
-            res.send(restaurants);
-        });
+// });
 
-});
+// //define the folder that will be used for statis assets
+// app.use(express.static('public'));
